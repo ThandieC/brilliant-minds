@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+#body {
+    background-image: url("../assets/images/background/grass.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0;
+}
+
+#main-cont {
+    margin-top: 5rem;
+}
