@@ -1,0 +1,35 @@
+#authBody {
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+form {
+    background-color: darkgreen;
+    background-image: URL(assets/images/background/two-parrots.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    padding: 2rem;
+    border: 2px solid darkgreen;
+    margin: 1rem;
+    margin-top: 4rem;
+    border-radius: 15px;
+}
+
+p,
+#switch {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: rgb(1, 24, 1);
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.email-error {
+    font-weight: normal;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: rgba(255, 0, 0, 0.4);
+}

@@ -1,0 +1,5 @@
+<button class="btn btn-success" (click)="onNewCreation()">New Story</button>
+<hr>
+<div>
+    <app-creations-item *ngFor="let creations of newCreations; let i = index" [creations]="creations" [index]="i"></app-creations-item>
+</div>

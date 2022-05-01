@@ -1,0 +1,13 @@
+.container {
+    margin-top: 2rem;
+    background-color: rgba(7, 190, 252, 0.4);
+    padding: 0.8rem;
+}
+
+button {
+    margin-right: 0.5rem;
+}
+
+img {
+    height: 100%;
+}

@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div id="toolbar">
+                <div id="manage" class="btn-group dropdown" appDropdown>
+                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href='target="_self"'>
+            Manage<span class="caret"></span>
+          </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a style="cursor: pointer" (click)="onEditCreation()">Edit Story</a
+              >
+            </li>
+            <hr />
+            <li>
+              <a style="cursor: pointer" (click)="onDeleteCreation()"
+                >Delete Story</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div id="page">
+        <div>
+          <h3>{{ creation.title }}</h3>
+          <p>{{ creation.creationBody }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

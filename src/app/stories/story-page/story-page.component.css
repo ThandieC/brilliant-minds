@@ -1,0 +1,100 @@
+.container {
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color: rgba(128, 0, 128, 0.4);
+}
+
+#page {
+    background-color: rgb(230, 221, 230);
+    padding: 0.5rem;
+}
+
+#feedback {
+    font-weight: bold;
+    font-style: italic;
+    padding-top: 0.5rem;
+    color: rgb(1, 1, 53);
+}
+
+img {
+    margin-right: 0.5rem;
+}
+
+#questions {
+    background-color: rgb(247, 128, 85);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+#qsnDiv {
+    border: 2px solid orangered;
+    border-bottom: 10px solid orangered;
+    background-color: rgb(250, 151, 115);
+    margin-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+#qHeading {
+    background-color: orangered;
+    padding: 0.5rem;
+    text-align: center;
+    color: lavender;
+    margin-bottom: 0.5rem;
+}
+
+#qsn {
+    background-color: rgb(247, 128, 85);
+    padding: 0.5rem;
+    text-align: center;
+}
+
+#myQuestion,
+#myAnswer {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+#myAnswer {
+    font-style: italic;
+    font-weight: bold;
+    color: darkgreen;
+    height: 1.7rem;
+    padding-top: 0.3rem;
+}
+
+.ansBtn {
+    margin: 0.2rem;
+    width: 6rem;
+    background-color: rgb(247, 128, 85);
+    border-color: rgb(243, 145, 109);
+    border-radius: 10px;
+}
+
+.btn {
+    margin: 0;
+}
+
+#next {
+    background-color: orangered;
+    color: lavender;
+    font-weight: bold;
+}
+
+#repeat {
+    background-color: lavender;
+    color: orangered;
+    font-weight: bold;
+    border-color: orangered;
+}
+
+#finished {
+    color: rgb(10, 82, 10);
+    font-family: "Comic Sans MS", Arial, Helvetica, sans-serif;
+    font-style: italic;
+    padding: 0.5rem 0;
+}
+
+.controls {
+    height: 6rem;
+}

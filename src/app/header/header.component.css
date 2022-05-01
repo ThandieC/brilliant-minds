@@ -1,0 +1,65 @@
+.navbar,
+#brand {
+    background-color: palevioletred;
+    border-bottom: 1px solid purple;
+}
+
+#brand {
+    text-align: center;
+    color: rgb(1, 24, 1);
+    font-family: "Bradley Hand ITC", Vivaldi, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: x-large;
+}
+
+.nav-item {
+    padding-left: 1rem;
+}
+
+.nav-link,
+.nav-item,
+.dropdown-item,
+a {
+    color: rgb(1, 24, 1);
+    cursor: pointer;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+.activated {
+    background-color: deeppink;
+    color: green;
+    border-radius: 20px;
+}
+
+.dropdown-menu {
+    background-color: rgb(2, 50, 2);
+}
+
+.dropdown-item:hover {
+    background-color: green;
+}
+
+.dropdown-item:active {
+    opacity: 0.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar-right {
+    width: fit-content;
+}
+
+.navbar-right>li {
+    padding: 0;
+    margin: 0;
+}
