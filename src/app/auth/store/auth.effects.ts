@@ -5,6 +5,7 @@ import { of } from "rxjs";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { Store } from "@ngrx/store";
+import { environment } from "../../../environments/environment";
 
 import * as AuthActions from "./auth.actions";
 import { User } from "../user.model";
@@ -66,7 +67,8 @@ export class AuthEffects {
         switchMap((authData: AuthActions.SignupStart) => {
             return this.http
                 .post<AuthResponseData>(
-                    "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAfZzWWs4pOiBgq0CocV6seE3mDkbyicTU",
+                    "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" +
+                        environment.firebaseAPIKey,
                     {
                         email: authData.payload.email,
                         password: authData.payload.password,
@@ -100,7 +102,8 @@ export class AuthEffects {
         switchMap((authData: AuthActions.LoginStart) => {
             return this.http
                 .post<AuthResponseData>(
-                    "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAfZzWWs4pOiBgq0CocV6seE3mDkbyicTU",
+                    "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" +
+                        environment.firebaseAPIKey,
                     {
                         email: authData.payload.email,
                         password: authData.payload.password,
