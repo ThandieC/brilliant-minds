@@ -14,7 +14,6 @@ import { HeaderComponent } from './header/header.component';
 import { SharedModule } from './shared/shared.module';
 import * as fromApp from './store/app.reducer';
 import { FooterComponent } from './footer/footer.component';
-import { CreationsEffects } from './creations/store/creations.effects';
 import { AuthEffects } from './auth/store/auth.effects';
 
 var firebaseConfig = {
@@ -33,7 +32,7 @@ var firebaseConfig = {
     HttpClientModule,
     BrowserModule,
     StoreModule.forRoot(fromApp.appReducer),
-    EffectsModule.forRoot([CreationsEffects, AuthEffects]),
+    EffectsModule.forRoot([AuthEffects]),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth

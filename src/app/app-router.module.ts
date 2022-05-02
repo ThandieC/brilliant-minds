@@ -16,6 +16,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'stories',
+    canActivate: [AuthGuard],
     loadChildren: () =>
       import('./stories/stories.module').then((m) => m.StoriesModule),
   },

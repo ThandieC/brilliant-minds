@@ -5,9 +5,7 @@
         </div>
         <app-alert [message]="error" *ngIf="error" (click)="onHandleError()"></app-alert>
         <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
-            <p>
-                Wanna write your own sweet story? Great! But first, let's get you into your account.
-            </p>
+            <p>Wanna grab a Story Book? Great!</p>
             <div class="form-group">
                 <input type="email" id="email" class="form-control" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" ngModel name="email" required email placeholder="Email" />
                 <p class="email-error" *ngIf="!pattern && authForm.touched">
