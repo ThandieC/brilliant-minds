@@ -24,12 +24,3 @@ p,
     font-weight: bold;
     text-align: center;
 }
-
-.email-error {
-    font-weight: normal;
-    border: 1px solid red;
-    border-radius: 5px;
-    padding: 5px;
-    margin-top: 5px;
-    background-color: rgba(255, 0, 0, 0.4);
-}
