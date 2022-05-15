@@ -4,36 +4,34 @@ import { Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import * as fromApp from '../../store/app.reducer';
 import * as StoriesActions from '../store/stories.actions';
+import { StoryModel } from '../../shared/story.model';
 
 @Component({
   selector: 'app-story-list',
   templateUrl: './story-list.component.html',
-  styleUrls: ['./story-list.component.css']
+  styleUrls: ['./story-list.component.css'],
 })
 export class StoryListComponent implements OnInit, OnDestroy {
+  sub!: Subscription;
+  newStories: StoryModel[] = [];
 
-  sub: Subscription;
-  newStories = [];
-
-  constructor(private store: Store<fromApp.AppState>) { }
+  constructor(private store: Store<fromApp.AppState>) {}
 
   ngOnInit(): void {
-    this.store.dispatch( new StoriesActions.SetStories() );
-    this.sub = this.store.select( 'stories' ).pipe(
-      map(
-        StoriesState => {
+    this.store.dispatch(new StoriesActions.SetStories());
+    this.sub = this.store
+      .select('stories')
+      .pipe(
+        map((StoriesState) => {
           return StoriesState.storiesArray;
-        }
+        })
       )
-    ).subscribe(
-      storiesArray => {
+      .subscribe((storiesArray) => {
         this.newStories = storiesArray;
-      }
-    );
+      });
   }
 
   ngOnDestroy() {
-    this.sub.unsubscribe()
+    this.sub.unsubscribe();
   }
-
 }

@@ -14,8 +14,8 @@ import * as authActions from "./store/auth.actions";
 export class AuthComponent implements OnInit, OnDestroy {
     isLogingMode = true;
     isLoading = false;
-    error: string = null;
-    private storeSub: Subscription;
+    error: string = "";
+    private storeSub!: Subscription;
 
     constructor(private store: Store<fromApp.AppState>) {}
 

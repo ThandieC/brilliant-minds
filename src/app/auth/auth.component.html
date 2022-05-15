@@ -9,9 +9,11 @@
             <div class="form-group">
                 <input type="text" id="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="form-control" ngModel name="email" required email placeholder="Email" />
             </div>
+            <br />
             <div class="form-group">
                 <input type="password" placeholder="Password: Minimum 6 characters" id="password" class="form-control" ngModel name="password" required minlength="6" />
             </div>
+            <br />
             <div>
                 <button class="btn btn-success" type="submit" [disabled]="authForm.invalid">
                     {{ isLogingMode ? "Login" : "Sign Up" }}

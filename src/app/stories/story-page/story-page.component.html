@@ -3,16 +3,16 @@
         <div id="page">
             <h3>{{ story.title }}</h3>
             <img class="img-fluid float-left" src="{{ story.imageURL }}" alt="{{ story.imageAlt }}" width="300" height="500" />
-            <p>{{ story.storyBody.para1 }}</p>
-            <p>{{ story.storyBody.para2 }}</p>
-            <p>{{ story.storyBody.para3 }}</p>
-            <p>{{ story.storyBody.para4 }}</p>
-            <p>{{ story.storyBody.para5 }}</p>
-            <p>{{ story.storyBody.para6 }}</p>
-            <p>{{ story.storyBody.para7 }}</p>
-            <p>{{ story.storyBody.para8 }}</p>
-            <p>{{ story.storyBody.para9 }}</p>
-            <p>{{ story.storyBody.para10 }}</p>
+            <p>{{ story.storyBody?.para1 }}</p>
+            <p>{{ story.storyBody?.para2 }}</p>
+            <p>{{ story.storyBody?.para3 }}</p>
+            <p>{{ story.storyBody?.para4 }}</p>
+            <p>{{ story.storyBody?.para5 }}</p>
+            <p>{{ story.storyBody?.para6 }}</p>
+            <p>{{ story.storyBody?.para7 }}</p>
+            <p>{{ story.storyBody?.para8 }}</p>
+            <p>{{ story.storyBody?.para9 }}</p>
+            <p>{{ story.storyBody?.para10 }}</p>
         </div>
     </div>
 </div>
@@ -23,55 +23,55 @@
             <div id="qsn">
                 <div id="questions">
                     <div class="qsn-ans">
-                        <div id="myQuestion">{{ story.questions[i] }}</div>
+                        <div id="myQuestion">{{ story.questions![i] }}</div>
                         <div id="myAnswer">{{ answer }}</div>
                     </div>
                 </div>
                 <div id="answer">
-                    <button id="btn2" class="ansBtn borderRad" (click)="onShowAnswer(story.questions[2], 'btn2')">
-            {{ story.answers[2] }}
+                    <button id="btn2" class="ansBtn borderRad" (click)="onShowAnswer(story.questions![2], 'btn2')">
+            {{ story.answers![2] }}
           </button>
-                    <button id="btn11" class="ansBtn borderRad" (click)="onShowAnswer(story.questions[11], 'btn11')">
-            {{ story.answers[11] }}
+                    <button id="btn11" class="ansBtn borderRad" (click)="onShowAnswer(story.questions![11], 'btn11')">
+            {{ story.answers![11] }}
           </button>
-                    <button id="btn0" class="ansBtn borderRad" (click)="onShowAnswer(story.questions[0], 'btn0')">
-            {{ story.answers[0] }}
+                    <button id="btn0" class="ansBtn borderRad" (click)="onShowAnswer(story.questions![0], 'btn0')">
+            {{ story.answers![0] }}
           </button>
-                    <button id="btn5" class="ansBtn borderRad" (click)="onShowAnswer(story.questions[5], 'btn5')">
-            {{ story.answers[5] }}
+                    <button id="btn5" class="ansBtn borderRad" (click)="onShowAnswer(story.questions![5], 'btn5')">
+            {{ story.answers![5] }}
           </button>
-                    <button id="btn9" class="ansBtn borderRad" (click)="onShowAnswer(story.questions[9], 'btn9')">
-            {{ story.answers[9] }}
+                    <button id="btn9" class="ansBtn borderRad" (click)="onShowAnswer(story.questions![9], 'btn9')">
+            {{ story.answers![9] }}
           </button>
-                    <button id="btn13" class="ansBtn borderRad" (click)="onShowAnswer(story.questions[13], 'btn13')">
-            {{ story.answers[13] }}
+                    <button id="btn13" class="ansBtn borderRad" (click)="onShowAnswer(story.questions![13], 'btn13')">
+            {{ story.answers![13] }}
           </button>
-                    <button id="btn1" class="ansBtn borderRad" (click)="onShowAnswer(story.questions[1], 'btn1')">
-            {{ story.answers[1] }}
+                    <button id="btn1" class="ansBtn borderRad" (click)="onShowAnswer(story.questions![1], 'btn1')">
+            {{ story.answers![1] }}
           </button>
-                    <button id="btn6" class="ansBtn borderRad" (click)="onShowAnswer(story.questions[6], 'btn6')">
-            {{ story.answers[6] }}
+                    <button id="btn6" class="ansBtn borderRad" (click)="onShowAnswer(story.questions![6], 'btn6')">
+            {{ story.answers![6] }}
           </button>
-                    <button id="btn8" class="ansBtn borderRad" (click)="onShowAnswer(story.questions[8], 'btn8')">
-            {{ story.answers[8] }}
+                    <button id="btn8" class="ansBtn borderRad" (click)="onShowAnswer(story.questions![8], 'btn8')">
+            {{ story.answers![8] }}
           </button>
-                    <button id="btn3" class="ansBtn borderRad" (click)="onShowAnswer(story.questions[3], 'btn3')">
-            {{ story.answers[3] }}
+                    <button id="btn3" class="ansBtn borderRad" (click)="onShowAnswer(story.questions![3], 'btn3')">
+            {{ story.answers![3] }}
           </button>
-                    <button id="btn14" class="ansBtn borderRad" (click)="onShowAnswer(story.questions[14], 'btn14')">
-            {{ story.answers[14] }}
+                    <button id="btn14" class="ansBtn borderRad" (click)="onShowAnswer(story.questions![14], 'btn14')">
+            {{ story.answers![14] }}
           </button>
-                    <button id="btn12" class="ansBtn borderRad" (click)="onShowAnswer(story.questions[12], 'btn12')">
-            {{ story.answers[12] }}
+                    <button id="btn12" class="ansBtn borderRad" (click)="onShowAnswer(story.questions![12], 'btn12')">
+            {{ story.answers![12] }}
           </button>
-                    <button id="btn10" class="ansBtn borderRad" (click)="onShowAnswer(story.questions[10], 'btn10')">
-            {{ story.answers[10] }}
+                    <button id="btn10" class="ansBtn borderRad" (click)="onShowAnswer(story.questions![10], 'btn10')">
+            {{ story.answers![10] }}
           </button>
-                    <button id="btn7" class="ansBtn borderRad" (click)="onShowAnswer(story.questions[7], 'btn7')">
-            {{ story.answers[7] }}
+                    <button id="btn7" class="ansBtn borderRad" (click)="onShowAnswer(story.questions![7], 'btn7')">
+            {{ story.answers![7] }}
           </button>
-                    <button id="btn4" class="ansBtn borderRad" (click)="onShowAnswer(story.questions[4], 'btn4')">
-            {{ story.answers[4] }}
+                    <button id="btn4" class="ansBtn borderRad" (click)="onShowAnswer(story.questions![4], 'btn4')">
+            {{ story.answers![4] }}
           </button>
                 </div>
                 <div class="controls">

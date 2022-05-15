@@ -7,8 +7,8 @@ import { StoryModel } from '../../../shared/story.model';
   styleUrls: ['./story-item.component.css'],
 })
 export class StoryItemComponent implements OnInit {
-  @Input() story: StoryModel;
-  @Input() index: number;
+  @Input() story!: StoryModel;
+  @Input() index!: number;
 
   constructor() {}
 

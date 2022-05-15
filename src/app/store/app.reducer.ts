@@ -8,7 +8,7 @@ export interface AppState {
   stories: fromStories.State;
 }
 
-export const appReducer: ActionReducerMap<AppState> = {
+export const appReducer: ActionReducerMap<AppState, any> = {
   auth: fromAuth.authReducer,
   stories: fromStories.storiesReducer,
 };

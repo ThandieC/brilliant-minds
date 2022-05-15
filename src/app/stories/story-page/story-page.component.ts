@@ -11,10 +11,10 @@ import { StoryModel } from '../../shared/story.model';
   styleUrls: ['./story-page.component.css'],
 })
 export class StoryPageComponent implements OnInit {
-  story: StoryModel;
-  id: number;
-  question: string;
-  answer: string;
+  story!: StoryModel;
+  id!: number;
+  question!: string;
+  answer!: string;
   showNextQuestion = false;
   answered = false;
   correctAns = false;
@@ -43,13 +43,13 @@ export class StoryPageComponent implements OnInit {
         })
       )
       .subscribe((story) => {
-        this.story = story;
+        this.story = story!;
       });
   }
 
   onShowAnswer(qsn: string, id: string) {
-    this.question = document.getElementById('myQuestion').textContent;
-    this.answer = document.getElementById(id).textContent;
+    this.question = document.getElementById('myQuestion')!.textContent ?? ''; //fallback for when the value is null or undefined
+    this.answer = document.getElementById(id)!.textContent!; // ! removes null and undefined, tells typescript this value will never be null
     this.answered = true;
     if (this.question === qsn) {
       this.correctAns = true;
@@ -63,21 +63,21 @@ export class StoryPageComponent implements OnInit {
 
   onWrongAnswer(id: string) {
     this.answered = true;
-    this.answer = document.getElementById(id).textContent;
+    this.answer = document.getElementById(id)!.textContent!;
     this.correctAns = false;
     this.clearAnswer();
   }
 
   clearAnswer() {
     setTimeout(() => {
-      this.answer = null;
+      this.answer = '';
     }, 1000);
   }
 
   onNextQsn() {
     this.showNextQuestion = false;
     this.i += 1;
-    this.answer = null;
+    this.answer = '';
     this.answered = false;
     if (this.i === 10) {
       this.finished = true;
