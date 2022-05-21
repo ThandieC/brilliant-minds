@@ -12,7 +12,6 @@ import * as AuthActions from '../auth/store/auth.actions';
 })
 export class HeaderComponent implements OnInit {
   isAuthenticated = false;
-  navbarCollapsed = true;
 
   constructor(private store: Store<fromApp.AppState>) {}
 
@@ -23,10 +22,6 @@ export class HeaderComponent implements OnInit {
       .subscribe((user) => {
         this.isAuthenticated = !!user; //  this is equal to   !user ? false : true;
       });
-  }
-
-  onToggleNavbarCollapsing() {
-    this.navbarCollapsed = !this.navbarCollapsed;
   }
 
   onLogout() {

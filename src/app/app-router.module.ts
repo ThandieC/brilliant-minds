@@ -20,12 +20,6 @@ const appRoutes: Routes = [
     loadChildren: () =>
       import('./stories/stories.module').then((m) => m.StoriesModule),
   },
-  // {
-  //   path: 'creations',
-  //   canActivate: [AuthGuard],
-  //   loadChildren: () =>
-  //     import('./creations/creations.module').then((m) => m.CreationsModule),
-  // },
   { path: '**', redirectTo: '/home' },
 ];
 

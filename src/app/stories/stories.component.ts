@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Route } from '@angular/router';
 
 @Component({
   selector: 'app-stories',
@@ -7,7 +6,27 @@ import { Route } from '@angular/router';
   styleUrls: ['./stories.component.css'],
 })
 export class StoriesComponent implements OnInit {
+  book: boolean = false;
+  storylist: boolean = false;
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  onToggleStoryList() {
+    this.storylist = !this.storylist;
+  }
+
+  onCloseStoryList() {
+    this.storylist = false;
+    this.onSelectStory();
+  }
+
+  onSelectStory() {
+    this.book = true;
+  }
+
+  onShowStoryList() {
+    this.book = false;
+  }
 }

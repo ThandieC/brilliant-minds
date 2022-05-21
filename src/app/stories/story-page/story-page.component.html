@@ -26,6 +26,18 @@
                         <div id="myQuestion">{{ story.questions![i] }}</div>
                         <div id="myAnswer">{{ answer }}</div>
                     </div>
+                    <div class="controls">
+                        <p id="feedback" *ngIf="answered">
+                            {{ correctAns ? "Good Job!" : "Try Again!" }}
+                        </p>
+                        <button class="btn" id="next" *ngIf="showNextQuestion" (click)="onNextQsn()">
+              Next
+            </button>
+                        <div *ngIf="finished" id="finished">Excellent Work!</div>
+                        <button class="btn" id="repeat" *ngIf="finished" (click)="onRepeatQuestions()">
+              Answer Questions Again
+            </button>
+                    </div>
                 </div>
                 <div id="answer">
                     <button id="btn2" class="ansBtn borderRad" (click)="onShowAnswer(story.questions![2], 'btn2')">
@@ -72,18 +84,6 @@
           </button>
                     <button id="btn4" class="ansBtn borderRad" (click)="onShowAnswer(story.questions![4], 'btn4')">
             {{ story.answers![4] }}
-          </button>
-                </div>
-                <div class="controls">
-                    <p id="feedback" *ngIf="answered">
-                        {{ correctAns ? "Good Job!" : "Try Again!" }}
-                    </p>
-                    <button class="btn" id="next" *ngIf="showNextQuestion" (click)="onNextQsn()">
-            Next
-          </button>
-                    <div *ngIf="finished" id="finished">Excellent Work!</div>
-                    <button class="btn" id="repeat" *ngIf="finished" (click)="onRepeatQuestions()">
-            Answer Questions Again
           </button>
                 </div>
             </div>

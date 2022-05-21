@@ -1,12 +1,32 @@
-<div class="row">
-    <div class="col-xs-12 col-sm-4 container">
-        <div id="side" class="stories">
-            <app-story-list></app-story-list>
+<div class="row"></div>
+<div class="row" *ngIf="!book">
+    <div class="col-12">
+        <div role="button" id="list-btn" (click)="onToggleStoryList()">
+            {{ storylist ? "Close The Story Book" : "Open The Story Book" }}
         </div>
     </div>
+    <div class="col-xs-12 col-sm-4 container">
+        <div id="side" class="stories" *ngIf="storylist">
+            <app-story-list (click)="onCloseStoryList()"></app-story-list>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-8 container">
+        <div id="main" class="stories">
+            <app-stories-home></app-stories-home>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="book">
+    <div class="col-12">
+        <div role="button" id="story-btn" (click)="onShowStoryList()">
+            Select A New Story
+        </div>
+    </div>
+    <div class="col-sm-2"></div>
     <div class="col-xs-12 col-sm-8 container">
         <div id="main" class="stories">
             <router-outlet></router-outlet>
         </div>
     </div>
+    <div class="col-sm-2"></div>
 </div>

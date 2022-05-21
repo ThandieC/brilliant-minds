@@ -1,5 +1,5 @@
 .row {
-    padding-top: 2rem;
+    padding-top: 1.2rem;
 }
 
 .container {
@@ -14,4 +14,16 @@
     height: 75vh;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+#list-btn,
+#story-btn {
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: darkgreen;
+    text-align: center;
+    width: fit-content;
+    margin-bottom: 10px;
 }
