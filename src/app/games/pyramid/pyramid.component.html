@@ -1,0 +1,58 @@
+<div id="heading-cont">
+    <h3 id="heading">Build A Pyramid</h3>
+</div>
+<div id="main" class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-12">
+                    <div id="instruct">
+                        Split up or add numbers such that the number on each box is the Total of the two numbers directly below it. Have fun!
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div id="workPad">
+                        <form (submit)="onCheckBox()">
+                            <div id="grid">
+                                <div class="grid-row">
+                                    <input type="text" name="numA" id="numA" class="disabled" value="{{ num1 }}" disabled />
+                                </div>
+                                <div class="grid-row">
+                                    <input type="text" name="numB" id="numB" [(ngModel)]="input1" />
+                                    <input type="text" name="numC" id="numC" [(ngModel)]="input2" />
+                                </div>
+                                <div class="grid-row">
+                                    <input type="text" name="numD" id="numD" [(ngModel)]="input3" />
+                                    <input type="text" name="numE" id="numE" [(ngModel)]="input4" />
+                                    <input type="text" name="numF" id="numF" [(ngModel)]="input5" />
+                                </div>
+                                <div class="grid-row">
+                                    <input type="text" name="numG" id="numG" [(ngModel)]="input6" />
+                                    <input type="text" name="numH" id="numH" [(ngModel)]="input7" />
+                                    <input type="text" name="numI" id="numI" [(ngModel)]="input8" />
+                                    <input type="text" name="numJ" id="numJ" class="disabled" value="{{ num2 }}" disabled />
+                                </div>
+                            </div>
+
+                            <div *ngIf="!showNext">
+                                <button class="controls" type="submit">&#x2713;</button>
+                                <button class="controls" type="button" (click)="resetBox()">
+                  X
+                </button>
+                            </div>
+
+                            <button class="controls" type="button" *ngIf="showNext" (click)="onNewBox()">
+                &#x22B3;
+              </button>
+                        </form>
+                        <div id="feedback" *ngIf="checked">
+                            {{ success ? "Good Job!" : "Keep trying!" }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

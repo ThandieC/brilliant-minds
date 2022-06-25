@@ -1,19 +1,12 @@
 #main {
-    background-color: skyblue;
-    background-image: URL(assets/images/background/blue-book-bg.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+    margin: 0 auto;
     text-align: center;
-    padding-top: 3rem;
-    height: 100vh;
+    padding-top: 2rem;
+    height: 60vh;
     width: 80vw;
-    margin-left: 10vw;
-}
-
-#inner {
-    padding-left: 40%;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    background-color: rgba(173, 216, 230, 0.4);
 }
 
 h3 {
@@ -42,14 +35,10 @@ a:hover {
 }
 
 #read {
-    border-bottom: 3px solid darkmagenta;
+    border-bottom: 3px solid darkred;
     padding: 1rem 2rem;
 }
 
 #read>a {
-    color: purple;
-}
-
-#write>a {
-    color: darkgreen;
+    color: darkred;
 }

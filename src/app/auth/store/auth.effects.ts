@@ -185,7 +185,7 @@ export class AuthEffects {
         ofType(AuthActions.AUTHENTICATION_SUCCESS),
         tap((authSuccessData: AuthActions.AuthenticationSuccess) => {
             if (authSuccessData.payload.redirect) {
-                this.router.navigate(["/stories"]);
+                this.router.navigate(["/landing"]);
             }
         })
     );

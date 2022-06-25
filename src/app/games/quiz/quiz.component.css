@@ -1,0 +1,128 @@
+.row {
+    background-color: darkgreen;
+}
+
+.mainBox {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: #009999;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 0.5rem;
+    padding-bottom: 0;
+    background-color: #003300;
+    background-image: url(../../../assets/images/crayons.png);
+    color: white;
+    font-family: "Comic Sans MS", Calibri;
+}
+
+h5 {
+    text-align: center;
+    font-family: Calibri;
+    color: #013535;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 5px;
+    padding-bottom: 0;
+}
+
+#clues {
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+
+.clue-div {
+    background-color: #ff99ff;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+#qsn {
+    color: white;
+    padding: 5px 10px;
+    width: fit-content;
+    border-radius: 5px;
+    border: 2px solid rgb(90, 2, 37);
+    margin: 0 auto;
+    font-family: "Comic Sans MS", Calibri;
+}
+
+.clue {
+    background-color: #ff99ff;
+    padding: 0.2rem 0.5rem;
+    margin: 0.2rem;
+    color: #271227;
+    font-family: "Comic Sans MS", Calibri;
+}
+
+input {
+    width: 3rem;
+    background-color: #ff99ff;
+}
+
+#showDiv {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.select {
+    background-color: rgb(90, 2, 37);
+    color: #009999;
+    border-radius: 50%;
+    padding: 0.2rem 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.answer {
+    text-align: center;
+    font-family: "Comic Sans MS", Calibri;
+    font-size: large;
+}
+
+.clues-left {
+    font-weight: bold;
+}
+
+.show {
+    padding: 5px;
+}
+
+.clues-info,
+.user-input {
+    width: 85%;
+    background-color: rgba(255, 153, 255, 0.5);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.show-clues,
+.check {
+    font-weight: bold;
+    width: 15%;
+    background-color: #271227;
+    color: whitesmoke;
+    margin: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#selected-clue {
+    background-color: #ff99ff;
+    padding: 20px 10px;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+    color: #003300;
+    border: 1px solid white;
+}

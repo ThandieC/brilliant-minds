@@ -1,0 +1,66 @@
+<div id="heading-cont">
+    <h3 id="heading">Remember Me!</h3>
+</div>
+<div id="main" class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-12">
+                    <div id="workPad">
+                        <div id="gridCover">
+                            <div id="gridInner">
+                                <p id="instruct">
+                                    The number disappears in 3 seconds. Can you remember it?
+                                </p>
+                                <div id="selectDiv">
+                                    <P id="select">SELECT LEVEL</P>
+                                    <button class="levels" (click)="onSelectLevel('Beginner')">
+                    1
+                  </button>
+                                    <button class="levels" (click)="onSelectLevel('Easy')">
+                    2
+                  </button>
+                                    <button class="levels" (click)="onSelectLevel('Moderate')">
+                    3
+                  </button>
+                                    <button class="levels" (click)="onSelectLevel('Difficult')">
+                    4
+                  </button>
+                                    <button class="levels" (click)="onSelectLevel('Super')">
+                    5
+                  </button>
+                                </div>
+                                <div id="levelDiv">
+                                    <p id="level" class="selected">{{ level }}</p>
+                                    <p role="button" id="play" class="selected" (click)="onNewNumber()">
+                                        GO
+                                    </p>
+                                </div>
+                                <form (submit)="onCheckBox()">
+                                    <div id="grid">
+                                        <div class="randomNums">
+                                            <p *ngIf="!isPlaying">{{ randomNum }}</p>
+                                        </div>
+                                        <hr />
+                                        <input type="text" name="userNumber" id="userNumber" [(ngModel)]="userNum" />
+                                    </div>
+                                    <div id="controlBtns">
+                                        <button class="controls" type="submit" *ngIf="!showNext">
+                      &#x2713;
+                    </button>
+                                        <button class="controls" type="button" *ngIf="showNext" (click)="onNewNumber()">
+                      &#x22B3;
+                    </button>
+                                    </div>
+                                </form>
+                                <div id="feedback" *ngIf="checked">
+                                    {{ success ? "Good Job!" : "Keep trying!" }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

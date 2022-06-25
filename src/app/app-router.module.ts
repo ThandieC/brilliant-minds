@@ -15,10 +15,22 @@ const appRoutes: Routes = [
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
+    path: 'landing',
+    canActivate: [AuthGuard],
+    loadChildren: () =>
+      import('./landing/landing.module').then((m) => m.LandingModule),
+  },
+  {
     path: 'stories',
     canActivate: [AuthGuard],
     loadChildren: () =>
       import('./stories/stories.module').then((m) => m.StoriesModule),
+  },
+  {
+    path: 'math-games',
+    canActivate: [AuthGuard],
+    loadChildren: () =>
+      import('./games/games.module').then((m) => m.GamesModule),
   },
   { path: '**', redirectTo: '/home' },
 ];
@@ -27,7 +39,6 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(appRoutes, {
       preloadingStrategy: PreloadAllModules,
-      //initialNavigation: 'enabled',
       onSameUrlNavigation: 'reload',
     }),
   ],
