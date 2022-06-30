@@ -1,26 +1,16 @@
 import { Action } from '@ngrx/store';
 
-export const NEW_PYRAMID = '[Pyramid] New Box';
-export const ADD_PYRAMID = '[Pyramid] Add Box';
+export const NEW_NUMBER = '[Quiz] New Number';
+export const CHECK_GREATER = '[Quiz] Check Greater';
+export const CHECK_ANSWER = '[Quiz] Check Answer';
 
-export class NewPyramid implements Action {
-  readonly type = NEW_PYRAMID;
+export class NewNumber implements Action {
+  readonly type = NEW_NUMBER;
 }
 
-export class AddPyramid implements Action {
-  readonly type = ADD_PYRAMID;
-  constructor(
-    public payload: {
-      num1: number;
-      num2: number;
-      num3: number;
-      num4: number;
-      num5: number;
-      num6: number;
-      num7: number;
-      num8: number;
-    }
-  ) {}
+export class CheckGreater implements Action {
+  readonly type = CHECK_GREATER;
+  constructor(public payload: number) {}
 }
 
-export type QuizActionsTypes = NewPyramid | AddPyramid;
+export type QuizActionsTypes = NewNumber | CheckGreater;

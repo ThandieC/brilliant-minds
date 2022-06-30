@@ -28,8 +28,7 @@ h5 {
     font-family: Calibri;
     color: #013535;
     background-color: rgba(255, 255, 255, 0.4);
-    padding: 5px;
-    padding-bottom: 0;
+    padding: 10px;
 }
 
 #clues {
@@ -92,6 +91,7 @@ input {
 
 .clues-left {
     font-weight: bold;
+    color: darkred;
 }
 
 .show {
@@ -125,4 +125,17 @@ input {
     font-weight: bold;
     color: #003300;
     border: 1px solid white;
+}
+
+#check-clue {
+    background-color: skyblue;
+    color: rgb(90, 2, 37);
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 0.5rem 3rem;
+    width: fit-content;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Comic Sans MS", Calibri;
+    font-size: large;
 }

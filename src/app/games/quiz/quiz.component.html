@@ -2,54 +2,61 @@
     <div class="col-sm-12">
         <h3 id="heading">Number Quiz</h3>
         <div class="mainBox">
-            <h5>I'm thinking of a Number. Can you work out what it is?</h5>
+            <h5>
+                I'm thinking of a Number between 0 and 100. <br /> Can you figure out what it is?
+            </h5>
             <div id="random-num"></div>
             <div class="col-sm-12">
                 <div id="showDiv" *ngIf="!selected">
-                    <span class="clues-info show">You Have <span class="clues-left">10</span> Clues Left.
+                    <span class="clues-info show">You Have <span class="clues-left">{{ cluesLeft }}</span> Clues Left.
                     </span>
                     <span role="button" class="show-clues show" (click)="onShowClues()">Get A Clue</span
           >
         </div>
+        <hr />
         <div id="clues" *ngIf="selected">
           <div id="qsn">Is The Number</div>
           <div class="clue-div">
             <span class="clue">Greater Than </span>
-                    <input type="number" />
-                    <span role="button" class="select" (click)="onSelectClue()">
+                    <input type="number" [(ngModel)]="greater" />
+                    <span role="button" class="select" (click)="onGreaterThan()">
               &#x2713;
             </span>
                 </div>
                 <div class="clue-div">
-                    <span class="clue">Smaller Than </span>
-                    <input type="number" /><span role="button" class="select" (click)="onSelectClue()">
+                    <span class="clue">Less Than </span>
+                    <input type="number" [(ngModel)]="smaller" /><span role="button" class="select" (click)="onLessThan()">
               &#x2713;
             </span>
                 </div>
                 <div class="clue-div">
                     <span class="clue">An Even Number?</span>
-                    <span role="button" class="select" (click)="onSelectClue()">
+                    <span role="button" class="select" (click)="onEvenNum()">
               &#x2713;
             </span>
                 </div>
                 <div class="clue-div">
                     <span class="clue">An Odd Number?</span>
-                    <span role="button" class="select" (click)="onSelectClue()">
+                    <span role="button" class="select" (click)="onOddNum()">
               &#x2713;
             </span>
                 </div>
                 <div class="clue-div">
                     <span class="clue">A Multiple Of </span>
-                    <input type="number" /><span role="button" class="select" (click)="onSelectClue()">
+                    <input type="number" [(ngModel)]="multiple" /><span role="button" class="select" (click)="onMultipleOf()">
               &#x2713;
             </span>
                 </div>
             </div>
             <div id="selected-clue" *ngIf="!selected">
-                No Clue Selected. Please Select A Clue.
+                {{ clueValue }}
+            </div>
+            <br />
+            <div id="check-clue" *ngIf="checkClue">
+                {{ confirmClue ? "Yes" : "No" }}
             </div>
             <hr />
-            <div class="answer-div">
+            <div class="answer-div" *ngIf="!selected">
                 <input type="text" name="answer" class="user-input answer" placeholder="Answer Here" />
                 <button class="check answer" (click)="onCheckAnswer()">
             &#x2713;
