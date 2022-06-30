@@ -6,6 +6,7 @@ import { AdditionComponent } from './addition/addition.component';
 import { PyramidComponent } from './pyramid/pyramid.component';
 import { MemoryComponent } from './memory/memory.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { GamesComponent } from './games.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { QuizComponent } from './quiz/quiz.component';
     PyramidComponent,
     MemoryComponent,
     QuizComponent,
+    GamesComponent,
   ],
   imports: [GamesRouterModule, CommonModule, FormsModule],
   exports: [CommonModule, FormsModule, GamesRouterModule],

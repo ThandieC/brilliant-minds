@@ -3,7 +3,8 @@
 }
 
 #body {
-    background-image: url("../assets/images/background/grass.png");
+    background-color: skyblue;
+    background-image: url("../assets/images/background/grass-1.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

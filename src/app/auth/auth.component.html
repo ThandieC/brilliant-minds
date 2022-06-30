@@ -5,7 +5,6 @@
         </div>
         <app-alert [message]="error" *ngIf="error" (click)="onHandleError()"></app-alert>
         <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
-            <p>Wanna grab a Story Book? Great!</p>
             <div class="form-group">
                 <input type="text" id="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="form-control" ngModel name="email" required email placeholder="Email" />
             </div>

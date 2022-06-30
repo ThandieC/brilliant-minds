@@ -11,7 +11,7 @@
           <li
             class="nav-item"
             routerLinkActive="activated"
-            *ngIf="isAuthenticated"
+            *ngIf="!isAuthenticated"
           >
             <a class="nav-link" routerLink="home"
               >Home<span class="sr-only"></span
@@ -21,8 +21,8 @@
             <a class="nav-link" routerLink="stories">Story Book <span class="sr-only"></span
             ></a>
         </li>
-        <li class="nav-item" routerLinkActive="activated" *ngIf="isAuthenticated">
-            <a class="nav-link" routerLink="stories">Math Challenge <span class="sr-only"></span
+        <li class="nav-item" routerLinkActive="activated" *ngIf="!isAuthenticated">
+            <a class="nav-link" routerLink="math-games">Math Challenge <span class="sr-only"></span
             ></a>
         </li>
         </ul>

@@ -1,0 +1,74 @@
+h4 {
+    margin-top: 3rem;
+    text-align: center;
+    color: rgb(1, 61, 1);
+}
+
+#bubbles {
+    width: 100vw;
+    height: 95vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.bubble {
+    display: inline-block;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    font-style: italic;
+    font-family: Calibri;
+    margin: 0px;
+    opacity: 0.5;
+    color: darkred;
+    text-decoration: none;
+}
+
+.bubble:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+#pyramid {
+    background: repeating-radial-gradient(rgb(0, 59, 0), #33cc00, darkgreen);
+    top: 30%;
+    left: 50%;
+    animation: bounce 6s infinite;
+}
+
+#memory {
+    background: repeating-radial-gradient(rgb(168, 2, 91), pink, deeppink);
+    top: 10%;
+    left: 60%;
+    animation: bounce 4s infinite;
+}
+
+#addbox {
+    background: repeating-radial-gradient(#ff3300, #ffcc00, #ff3300);
+    top: 20%;
+    left: 20%;
+    animation: bounce 5s infinite;
+}
+
+#quiz {
+    background: repeating-radial-gradient( blue, rgb(74, 74, 247), rgb(72, 95, 197));
+    top: 10%;
+    left: 40%;
+    animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0px, 30px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}

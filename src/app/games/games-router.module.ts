@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { GamesComponent } from './games.component';
 import { AdditionComponent } from './addition/addition.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { PyramidComponent } from './pyramid/pyramid.component';
 import { MemoryComponent } from './memory/memory.component';
 
 const gamesRoutes: Routes = [
+  { path: '', component: GamesComponent },
   { path: 'addbox', component: AdditionComponent },
   { path: 'quiz', component: QuizComponent },
   { path: 'pyramid', component: PyramidComponent },

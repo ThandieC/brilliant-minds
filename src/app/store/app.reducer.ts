@@ -5,7 +5,7 @@ import * as fromStories from '../stories/store/stories.reducer';
 import * as fromAddition from '../games/addition/store/addition.reducer';
 import * as fromMemory from '../games/memory/store/memory.reducer';
 import * as fromPyramid from '../games/pyramid/store/pyramid.reducer';
-//import * as fromQuiz from '../games/quiz/store/quiz.reducer';
+import * as fromQuiz from '../games/quiz/store/quiz.reducer';
 
 export interface AppState {
   auth: fromAuth.State;
@@ -13,7 +13,7 @@ export interface AppState {
   addition: fromAddition.State;
   memory: fromMemory.State;
   pyramid: fromPyramid.State;
-  //quiz: fromQuiz.State;
+  quiz: fromQuiz.State;
 }
 
 export const appReducer: ActionReducerMap<AppState, any> = {
@@ -22,5 +22,5 @@ export const appReducer: ActionReducerMap<AppState, any> = {
   addition: fromAddition.additionReducer,
   memory: fromMemory.memoryReducer,
   pyramid: fromPyramid.pyramidReducer,
-  //quiz: fromQuiz,
+  quiz: fromQuiz.quizReducer,
 };
