@@ -127,6 +127,10 @@ input {
     border: 1px solid white;
 }
 
+#clue-cont {
+    height: 3rem;
+}
+
 #check-clue {
     background-color: skyblue;
     color: rgb(90, 2, 37);
@@ -138,4 +142,26 @@ input {
     font-weight: bold;
     font-family: "Comic Sans MS", Calibri;
     font-size: large;
+}
+
+#answer-cont {
+    height: 2.5rem;
+    text-align: center;
+}
+
+#answer-div {
+    color: darkred;
+    font-family: "Comic Sans MS", Calibri;
+    margin: 5px;
+}
+
+#btn-div {
+    text-align: center;
+}
+
+#play-btn {
+    background-color: #009999;
+    border-radius: 5px;
+    border-color: #ff99ff;
+    padding: 5px 15px;
 }

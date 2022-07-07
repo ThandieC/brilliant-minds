@@ -52,15 +52,25 @@
                 {{ clueValue }}
             </div>
             <br />
-            <div id="check-clue" *ngIf="checkClue">
-                {{ confirmClue ? "Yes" : "No" }}
+            <div id="clue-cont">
+                <div id="check-clue" *ngIf="checkClue">
+                    {{ confirmClue ? "Yes" : "No" }}
+                </div>
             </div>
             <hr />
             <div class="answer-div" *ngIf="!selected">
-                <input type="text" name="answer" class="user-input answer" placeholder="Answer Here" />
+                <input type="number" name="answer" [(ngModel)]="userAnswer" class="user-input answer" placeholder="Answer Here" />
                 <button class="check answer" (click)="onCheckAnswer()">
             &#x2713;
           </button>
+            </div>
+            <div id="answer-cont">
+                <div id="answer-div" *ngIf="feedback">
+                    {{ solved ? "Well Done!" : "Try Again!" }}
+                </div>
+            </div>
+            <div id="btn-div" *ngIf="solved">
+                <button id="play-btn" (click)="onNewGame()">Play Again</button>
             </div>
         </div>
     </div>

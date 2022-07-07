@@ -35,5 +35,65 @@ export function quizReducer(
           clue: false,
         };
       }
+    case QuizActions.CHECK_SMALLER:
+      if (action.payload > state.randomNumber) {
+        return {
+          ...state,
+          clue: true,
+        };
+      } else {
+        return {
+          ...state,
+          clue: false,
+        };
+      }
+    case QuizActions.CHECK_EVEN:
+      if (state.randomNumber % 2 == 0) {
+        return {
+          ...state,
+          clue: true,
+        };
+      } else {
+        return {
+          ...state,
+          clue: false,
+        };
+      }
+    case QuizActions.CHECK_ODD:
+      if (state.randomNumber % 2 == 1) {
+        return {
+          ...state,
+          clue: true,
+        };
+      } else {
+        return {
+          ...state,
+          clue: false,
+        };
+      }
+    case QuizActions.CHECK_MULTIPLE:
+      if (state.randomNumber % action.payload == 0) {
+        return {
+          ...state,
+          clue: true,
+        };
+      } else {
+        return {
+          ...state,
+          clue: false,
+        };
+      }
+    case QuizActions.CHECK_ANSWER:
+      if (action.payload == state.randomNumber) {
+        return {
+          ...state,
+          solved: true,
+        };
+      } else {
+        return {
+          ...state,
+          solved: false,
+        };
+      }
   }
 }
