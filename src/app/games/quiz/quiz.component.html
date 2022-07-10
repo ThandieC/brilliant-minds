@@ -2,13 +2,20 @@
     <div class="col-sm-12">
         <h3 id="heading">Number Quiz</h3>
         <div class="mainBox">
+            <div id="gameOver" *ngIf="chancesLeft <= 0" [@gameOver]>
+                Game Over! <br />
+                <br />
+                <div class="btn-div">
+                    <button class="play-btn" (click)="onReplay()">Try Again</button>
+                </div>
+            </div>
             <h5>
                 I'm thinking of a Number between 0 and 100. <br /> Can you figure out what it is?
             </h5>
             <div id="random-num"></div>
             <div class="col-sm-12">
                 <div id="showDiv" *ngIf="!selected">
-                    <span class="clues-info show">You Have <span class="clues-left">{{ cluesLeft }}</span> Clues Left.
+                    <span class="clues-info show">You Have <span class="clues-left">{{ chancesLeft }}</span> Chances Left.
                     </span>
                     <span role="button" class="show-clues show" (click)="onShowClues()">Get A Clue</span
           >
@@ -53,7 +60,7 @@
             </div>
             <br />
             <div id="clue-cont">
-                <div id="check-clue" *ngIf="checkClue">
+                <div id="check-clue" [@clueState]="state">
                     {{ confirmClue ? "Yes" : "No" }}
                 </div>
             </div>
@@ -65,12 +72,12 @@
           </button>
             </div>
             <div id="answer-cont">
-                <div id="answer-div" *ngIf="feedback">
+                <div id="answer-div" [@completed]="doneState">
                     {{ solved ? "Well Done!" : "Try Again!" }}
                 </div>
             </div>
-            <div id="btn-div" *ngIf="solved">
-                <button id="play-btn" (click)="onNewGame()">Play Again</button>
+            <div class="btn-div" *ngIf="solved" [@gameOver]>
+                <button class="play-btn" (click)="onNewGame()">Play Again</button>
             </div>
         </div>
     </div>

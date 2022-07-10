@@ -20,7 +20,7 @@ export function quizReducer(
     case QuizActions.NEW_NUMBER:
       return {
         ...state,
-        randomNumber: Math.floor(Math.random() * 100 + 10),
+        randomNumber: Math.floor(Math.random() * 100 + 1),
       };
 
     case QuizActions.CHECK_GREATER:

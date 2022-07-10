@@ -10,6 +10,7 @@
     background-color: #009999;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
+    position: relative;
 }
 
 h3 {
@@ -92,6 +93,7 @@ input {
 .clues-left {
     font-weight: bold;
     color: darkred;
+    font-size: 1.5rem;
 }
 
 .show {
@@ -155,13 +157,37 @@ input {
     margin: 5px;
 }
 
-#btn-div {
+.btn-div {
     text-align: center;
 }
 
-#play-btn {
-    background-color: #009999;
+.play-btn {
+    background-color: #026b6b;
     border-radius: 5px;
     border-color: #ff99ff;
     padding: 5px 15px;
+    color: #ff99ff;
+}
+
+#gameOver {
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-align: center;
+    padding-top: 3rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#gameOver button {
+    color: #ff99ff;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: normal;
 }

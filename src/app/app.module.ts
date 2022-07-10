@@ -18,6 +18,7 @@ import { AuthEffects } from './auth/store/auth.effects';
   imports: [
     HttpClientModule,
     BrowserModule,
+    BrowserAnimationsModule,
     StoreModule.forRoot(fromApp.appReducer),
     EffectsModule.forRoot([AuthEffects]),
     AppRouterModule,
