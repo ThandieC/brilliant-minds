@@ -32,6 +32,11 @@ h5 {
     padding: 10px;
 }
 
+h5 span {
+    color: rgb(90, 2, 37);
+    font-size: larger;
+}
+
 #clues {
     width: fit-content;
     margin: 0 auto;
@@ -46,6 +51,7 @@ h5 {
     border-radius: 5px;
     padding: 0.5rem;
     margin: 0.5rem;
+    text-align: end;
 }
 
 #qsn {
@@ -130,28 +136,24 @@ input {
 }
 
 #clue-cont {
-    height: 3rem;
+    height: 2rem;
 }
 
 #check-clue {
-    background-color: skyblue;
     color: rgb(90, 2, 37);
-    border-radius: 10px;
     margin: 0 auto;
-    padding: 0.5rem 3rem;
-    width: fit-content;
     text-align: center;
     font-weight: bold;
     font-family: "Comic Sans MS", Calibri;
     font-size: large;
 }
 
-#answer-cont {
+.answer-cont {
     height: 2.5rem;
     text-align: center;
 }
 
-#answer-div {
+.answer-div {
     color: darkred;
     font-family: "Comic Sans MS", Calibri;
     margin: 5px;
@@ -159,6 +161,10 @@ input {
 
 .btn-div {
     text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 1rem;
+    width: 100%;
 }
 
 .play-btn {
@@ -169,7 +175,7 @@ input {
     color: #ff99ff;
 }
 
-#gameOver {
+.game-over {
     color: red;
     font-style: italic;
     font-weight: bold;
@@ -182,12 +188,26 @@ input {
     z-index: 10;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
-#gameOver button {
+.game-over button {
     color: #ff99ff;
     font-size: 18px;
     font-style: normal;
     font-weight: normal;
+}
+
+.win {
+    background-color: #ff99ff;
+    background-image: url(../../../assets/images/elephant.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 50%;
+    padding-top: 1.5rem;
+}
+
+#finished {
+    color: mediumvioletred;
 }

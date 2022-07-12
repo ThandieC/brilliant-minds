@@ -53,7 +53,7 @@ import {
       ),
       transition('visible => hidden', animate(300)),
     ]),
-    trigger('completed', [
+    trigger('retry', [
       state(
         'hide',
         style({
@@ -76,16 +76,17 @@ import {
             style({
               opacity: 0,
               transform: 'scale(0)',
+
               offset: 0.2,
             }),
             style({
               opacity: 1,
-              transform: 'scale(2)',
+              transform: 'scale(1.5)',
               offset: 0.4,
             }),
             style({
               opacity: 1,
-              transform: 'scale(2)',
+              transform: 'scale(1.5)',
               offset: 0.6,
             }),
             style({
@@ -101,6 +102,15 @@ import {
           ])
         )
       ),
+      transition('show => hide', [
+        animate(
+          300,
+          style({
+            opacity: 0,
+            transform: 'scale(0)',
+          })
+        ),
+      ]),
     ]),
     trigger('gameOver', [
       state(
@@ -141,6 +151,7 @@ export class QuizComponent implements OnInit, OnDestroy {
   finished: boolean = false;
   userAnswer: number;
   solved: boolean = false;
+
   initSub: Subscription;
   clueSub: Subscription;
   answerSub: Subscription;
@@ -165,7 +176,6 @@ export class QuizComponent implements OnInit, OnDestroy {
       .subscribe((quizState) => {
         this.randomNum = quizState.randomNumber;
         this.solved = false;
-        //  this.feedback = false;
         console.log(this.randomNum);
       });
   }
@@ -173,8 +183,7 @@ export class QuizComponent implements OnInit, OnDestroy {
   onShowClues() {
     this.state = 'hidden';
     this.selected = true;
-    // this.checkClue = false;
-    //  this.feedback = false;
+    this.doneState = 'hide';
     this.chancesLeft -= 1;
     this.chancesFinished();
   }
@@ -191,7 +200,6 @@ export class QuizComponent implements OnInit, OnDestroy {
     this.state = 'visible';
     this.doneState = 'hide';
     this.selected = false;
-    // this.checkClue = true;
     this.confirmClue = val;
   }
 
@@ -270,15 +278,12 @@ export class QuizComponent implements OnInit, OnDestroy {
       });
   }
 
-  animateFeedback() {
-    this.doneState = 'check';
-    // ? (this.doneState = 'show')
-    // : (this.doneState = 'hide');
+  resetState() {
+    this.doneState = 'hide';
   }
 
   onCheckAnswer() {
     this.store.dispatch(new QuizActions.CheckAnswer(+this.userAnswer));
-    // this.feedback = false;
     this.chancesLeft -= 1;
     this.chancesFinished();
     this.answerSub = this.store
@@ -289,15 +294,9 @@ export class QuizComponent implements OnInit, OnDestroy {
         })
       )
       .subscribe((quizState) => {
-        // this.feedback = true;
-
         this.solved = quizState.solved;
-        //this.animateFeedback();
         this.doneState = 'show';
         this.reset();
-        setTimeout(() => {
-          this.doneState = 'hide';
-        }, 2000);
       });
   }
 

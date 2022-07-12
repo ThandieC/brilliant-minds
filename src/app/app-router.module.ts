@@ -28,7 +28,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'math-games',
-    //canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     loadChildren: () =>
       import('./games/games.module').then((m) => m.GamesModule),
   },

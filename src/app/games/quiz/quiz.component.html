@@ -2,17 +2,24 @@
     <div class="col-sm-12">
         <h3 id="heading">Number Quiz</h3>
         <div class="mainBox">
-            <div id="gameOver" *ngIf="chancesLeft <= 0" [@gameOver]>
-                Game Over! <br />
-                <br />
+            <div class="game-over loose" *ngIf="chancesLeft <= 0" [@gameOver]>
+                Game Over!
                 <div class="btn-div">
                     <button class="play-btn" (click)="onReplay()">Try Again</button>
                 </div>
             </div>
+            <div class="game-over win" *ngIf="solved" [@gameOver]>
+                <div id="finished-div">
+                    <div id="finished">Well Done!</div>
+                </div>
+                <div class="btn-div" *ngIf="solved">
+                    <button class="play-btn" (click)="onNewGame()">Play Again</button>
+                </div>
+            </div>
             <h5>
-                I'm thinking of a Number between 0 and 100. <br /> Can you figure out what it is?
+                I'm thinking of a Number between <span>0</span> and <span>100</span>.
+                <br /> Can you figure out what it is?
             </h5>
-            <div id="random-num"></div>
             <div class="col-sm-12">
                 <div id="showDiv" *ngIf="!selected">
                     <span class="clues-info show">You Have <span class="clues-left">{{ chancesLeft }}</span> Chances Left.
@@ -66,18 +73,15 @@
             </div>
             <hr />
             <div class="answer-div" *ngIf="!selected">
-                <input type="number" name="answer" [(ngModel)]="userAnswer" class="user-input answer" placeholder="Answer Here" />
+                <input type="number" name="answer" [(ngModel)]="userAnswer" class="user-input answer" placeholder="Answer Here" (input)="resetState()" />
                 <button class="check answer" (click)="onCheckAnswer()">
             &#x2713;
           </button>
             </div>
-            <div id="answer-cont">
-                <div id="answer-div" [@completed]="doneState">
-                    {{ solved ? "Well Done!" : "Try Again!" }}
+            <div class="answer-cont">
+                <div class="answer-div" [@retry]="doneState">
+                    {{ solved ? "" : "Try Again!" }}
                 </div>
-            </div>
-            <div class="btn-div" *ngIf="solved" [@gameOver]>
-                <button class="play-btn" (click)="onNewGame()">Play Again</button>
             </div>
         </div>
     </div>
